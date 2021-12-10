@@ -4,6 +4,9 @@ var marg, mule, liit, shot, water;
 
 //var box1, box2, box3;
 
+var male, female;
+var maleW, femaleW;
+
 var margArrayta = [];
 var muleArray = [];
 var liitArray = [];
@@ -154,11 +157,16 @@ liitArray= [
   }
 ];
 
-image(marg, 140,100, 100,100); //60
-image(mule, 140,180, 100,100); //60
-image(liit, 140,260, 100,100); //60
-image(shot, 140,340, 100,100); //60
-image(water, 140,420,100,100); //60
+image(marg, 140,100, 100,100);
+image(mule, 140,180, 100,100);
+image(liit, 140,260, 100,100);
+image(shot, 140,340, 100,100);
+image(water, 140,420,100,100);
+
+ maleW = 79378.7 * 0.68;
+ femaleW = 79378.7 * 0.55;
+
+
 }
 
 function draw() {
@@ -166,8 +174,34 @@ function draw() {
 
 
 
-
+noStroke();
   textSize(16);
+
+fill(0);
+rect(160,20,140,50);
+fill(255);
+male = ((boxA * (0.5 * (boxA / (boxA + boxN))) * 0.789) / maleW ) *100 ;
+female = ((boxA * (0.5 * (boxA / (boxA + boxN))) * 0.789) / femaleW ) *100;
+  text(male, 160, 40);
+  text(female, 160, 60);
+
+  if (male > 0.008){
+    fill(255);
+    text('!', 150,40);
+  } else if (male < 0.008){
+    fill('#15184B')
+    text('!', 150,40);
+  };
+  if (female > 0.008){
+    fill(255);
+    text('!', 150,60);
+  } else if (female < 0.008){
+    fill('#15184B')
+    text('!', 150,60);
+  };
+
+fill('#15184B');
+  rect(209,20,91,50);
 
     //text(waterArray[0].amountN, 300, 300);
 
