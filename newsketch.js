@@ -11,18 +11,18 @@ var waterArray = [];
 var boxN = 0;
 var boxA = 0;
 
-var margA = 1.5;
-var margN = 0.5;
-
-var muleA = 2;
-var muleN = 10;
-
-var liitA = 2;
-var liitN = 0;
-
-var shotA = 1.5;
-var shotN = 0;
-
+// var margA = 1.5;
+// var margN = 0.5;
+//
+// var muleA = 2;
+// var muleN = 10;
+//
+// var liitA = 2;
+// var liitN = 0;
+//
+// var shotA = 1.5;
+// var shotN = 0;
+//
 var waterA = 0;
 var waterN = 8;
 
@@ -68,6 +68,12 @@ function setup() {
   spT3 = split(data3.drinks[0].strMeasure3, ' ');
   spT3 = split(data3.drinks[0].strMeasure4, ' ');
 
+
+
+
+
+
+
   shotArray = [{
     alcoholName: 'spirit',
     amountA: 1.5,
@@ -76,6 +82,7 @@ function setup() {
 
   waterArray = [{
     alcoholName: 'water',
+    amountA: 0,
     amountN: 8,
     amount: 8
   }];
@@ -144,7 +151,11 @@ liitArray= [
 
 function draw() {
 
+
+
   textSize(16);
+
+    text(waterArray[0].amountN, 300, 300);
 
 //fill(0);
   //rect(20,20,200,200);
@@ -309,28 +320,68 @@ function mousePressed (){
 
 if (mouseX >100 && mouseX < 120 && mouseY > 240 && mouseY <260 ){
 
-  boxA += (5*margA);
-  boxN += (5*margN);
-};
+  for (var i =0; i < margArrayta.length; i++) {
+    if(margArrayta[i].amountA){
+    boxA+=5*(margArrayta[i].amountA);} else
+    if (margArrayta[i].amountN){
+    boxN+=5*(margArrayta[i].amountN);
+    }
+}
+  // boxA += (5*margA);
+  // boxN += (5*margN);
+} else
 if (mouseX >140 && mouseX < 160 && mouseY > 240 && mouseY <260 ){
 
-  boxA += (5*muleA);
-  boxN += (5*muleN);
-};
+  for (var i =0; i < muleArray.length; i++) {
+    if(muleArray[i].amountA){
+    boxA+=5*(muleArray[i].amountA);} else
+    if (muleArray[i].amountN){
+    boxN+=5*(muleArray[i].amountN);
+    }
+}
+
+  // boxA += (5*muleA);
+  // boxN += (5*muleN);
+} else
 if (mouseX >180 && mouseX < 200 && mouseY > 240 && mouseY <260 ){
 
-  boxA += (5*liitA);
-  boxN += (5*liitN);
-};
+  for (var i =0; i < liitArray.length; i++) {
+    if(liitArray[i].amountA){
+    boxA+=5*(liitArray[i].amountA);} else
+    if (liitArray[i].amountN){
+    boxN+=5*(liitArray[i].amountN);
+    }
+}
+
+
+  // boxA += (5*liitA);
+  // boxN += (5*liitN);
+} else
 if (mouseX >220 && mouseX < 240 && mouseY > 240 && mouseY <260 ){
 
-  boxA += (5*liitA);
-  boxN += (5*liitN);
-};
+  for (var i =0; i < shotArray.length; i++) {
+    if(shotArray[i].amountA){
+    boxA+=5*(shotArray[i].amountA);} else
+    if (shotArray[i].amountN){
+    boxN+=5*(shotArray[i].amountN);
+    }
+}
+
+  // boxA += (5*liitA);
+  // boxN += (5*liitN);
+} else
 if (mouseX >260 && mouseX < 280 && mouseY > 240 && mouseY <260 ){
 
-  boxA += (5*waterA);
-  boxN += (5*waterN);
+  for (var i =0; i < waterArray.length; i++) {
+    if(waterArray[i].amountA){
+    boxA+=5*(waterArray[i].amountA);} else
+    if (waterArray[i].amountN){
+    boxN+=5*(waterArray[i].amountN);
+    }
+}
+  //
+  // boxA += (5*waterA);
+  // boxN += (5*waterN);
 };
 
 
