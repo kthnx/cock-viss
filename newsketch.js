@@ -1,5 +1,7 @@
 var data1, data2, data3;
 
+var marg, mule, liit, shot, water;
+
 //var box1, box2, box3;
 
 var margArrayta = [];
@@ -45,6 +47,12 @@ var waterN = 8;
 
 
 function preload() {
+
+  marg = loadImage('assets/marg.png');
+  mule = loadImage('assets/mule.png');
+  liit = loadImage('assets/liit.png');
+  shot = loadImage('assets/shot.png');
+  water = loadImage('assets/water.png');
 data = loadJSON('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007');
 
 data2 = loadJSON('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11009');
@@ -52,8 +60,8 @@ data2 = loadJSON('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11009
 data3 = loadJSON('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=17204');
 }
 function setup() {
-  createCanvas(1200,700);
-  background(160);
+  createCanvas(300,600);
+  background('#15184B');
 
   sp1 = split(data.drinks[0].strMeasure1, ' ');
   sp2 = split(data.drinks[0].strMeasure2, ' ');
@@ -146,25 +154,31 @@ liitArray= [
   }
 ];
 
-
+image(marg, 140,100, 100,100); //60
+image(mule, 140,180, 100,100); //60
+image(liit, 140,260, 100,100); //60
+image(shot, 140,340, 100,100); //60
+image(water, 140,420,100,100); //60
 }
 
 function draw() {
 
 
 
+
+
   textSize(16);
 
-    text(waterArray[0].amountN, 300, 300);
+    //text(waterArray[0].amountN, 300, 300);
 
 //fill(0);
   //rect(20,20,200,200);
 
-  rect(100,240,20,20);
-  rect(140,240,20,20);
-  rect(180,240,20,20);
-  rect(220,240,20,20);
-  rect(260,240,20,20);
+  // rect(100,240,20,20);
+  // rect(140,240,20,20);
+  // rect(180,240,20,20);
+  // rect(220,240,20,20);
+  // rect(260,240,20,20);
 
 
   // text(data.drinks[0].strIngredient1, 50, 50);
@@ -318,7 +332,7 @@ function mousePressed (){
 
 // 100, 120, 240, 260
 
-if (mouseX >100 && mouseX < 120 && mouseY > 240 && mouseY <260 ){
+if (mouseX >140 && mouseX < 220 && mouseY > 120 && mouseY <180 ){
 
   for (var i =0; i < margArrayta.length; i++) {
     if(margArrayta[i].amountA){
@@ -330,7 +344,7 @@ if (mouseX >100 && mouseX < 120 && mouseY > 240 && mouseY <260 ){
   // boxA += (5*margA);
   // boxN += (5*margN);
 } else
-if (mouseX >140 && mouseX < 160 && mouseY > 240 && mouseY <260 ){
+if (mouseX >140 && mouseX < 220 && mouseY > 200 && mouseY <270 ){
 
   for (var i =0; i < muleArray.length; i++) {
     if(muleArray[i].amountA){
@@ -343,7 +357,7 @@ if (mouseX >140 && mouseX < 160 && mouseY > 240 && mouseY <260 ){
   // boxA += (5*muleA);
   // boxN += (5*muleN);
 } else
-if (mouseX >180 && mouseX < 200 && mouseY > 240 && mouseY <260 ){
+if (mouseX >140 && mouseX < 220 && mouseY > 280 && mouseY <350 ){
 
   for (var i =0; i < liitArray.length; i++) {
     if(liitArray[i].amountA){
@@ -356,8 +370,9 @@ if (mouseX >180 && mouseX < 200 && mouseY > 240 && mouseY <260 ){
 
   // boxA += (5*liitA);
   // boxN += (5*liitN);
-} else
-if (mouseX >220 && mouseX < 240 && mouseY > 240 && mouseY <260 ){
+}
+else
+if (mouseX >140 && mouseX < 220 && mouseY > 360 && mouseY <430 ){
 
   for (var i =0; i < shotArray.length; i++) {
     if(shotArray[i].amountA){
@@ -369,8 +384,9 @@ if (mouseX >220 && mouseX < 240 && mouseY > 240 && mouseY <260 ){
 
   // boxA += (5*liitA);
   // boxN += (5*liitN);
-} else
-if (mouseX >260 && mouseX < 280 && mouseY > 240 && mouseY <260 ){
+}
+ else
+if (mouseX >140 && mouseX < 220 && mouseY > 440 && mouseY <510 ){
 
   for (var i =0; i < waterArray.length; i++) {
     if(waterArray[i].amountA){
