@@ -1,3 +1,7 @@
+var p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12;
+
+var page;
+
 var data1, data2, data3;
 
 var marg, mule, liit, shot, water;
@@ -50,6 +54,21 @@ var waterN = 8;
 
 
 function preload() {
+
+
+
+  p1 = loadImage('assets/1.png');
+  p2 = loadImage('assets/2.png');
+  p3 = loadImage('assets/3.png');
+  p4 = loadImage('assets/4.png');
+  p5 = loadImage('assets/5.png');
+  p6 = loadImage('assets/6.png');
+  p7 = loadImage('assets/7.png');
+  p8 = loadImage('assets/8.png');
+  p9 = loadImage('assets/9.png');
+  p10 = loadImage('assets/10.png');
+  p11 = loadImage('assets/11.png');
+  p12 = loadImage('assets/12.png');
 
   marg = loadImage('assets/marg.png');
   mule = loadImage('assets/mule.png');
@@ -157,16 +176,16 @@ liitArray= [
   }
 ];
 
-image(marg, 140,100, 100,100);
-image(mule, 140,180, 100,100);
-image(liit, 140,260, 100,100);
-image(shot, 140,340, 100,100);
-image(water, 140,420,100,100);
+// image(marg, 140,100, 100,100);
+// image(mule, 140,180, 100,100);
+// image(liit, 140,260, 100,100);
+// image(shot, 140,340, 100,100);
+// image(water, 140,420,100,100);
 
  maleW = 79378.7 * 0.68;
  femaleW = 79378.7 * 0.55;
 
-
+page = 0;
 }
 
 function draw() {
@@ -176,6 +195,38 @@ function draw() {
 
 noStroke();
   textSize(16);
+
+  if (page == 0) {
+    image(p1, 0,0, 300, 600);
+  } else if (page == 1) {
+    image(p2, 0,0, 300, 600);
+  } else if (page == 2) {
+    image(p3, 0,0, 300, 600);
+  } else if (page == 3) {
+    image(p4, 0,0, 300, 600);
+  } else if (page == 4) {
+    image(p5, 0,0, 300, 600);
+  } else if (page == 5) {
+    image(p6, 0,0, 300, 600);
+  } else if (page == 6) {
+    image(p7, 0,0, 300, 600);
+  } else if (page == 7) {
+    image(p8, 0,0, 300, 600);
+  } else if (page == 8) {
+    image(p9, 0,0, 300, 600);
+  } else if (page == 9) {
+    image(p10, 0,0, 300, 600);
+  } else if (page == 10) {
+    image(p11, 0,0, 300, 600);
+  }
+
+  else {
+    background('#15184B');
+    image(marg, 140,100, 100,100);
+    image(mule, 140,180, 100,100);
+    image(liit, 140,260, 100,100);
+    image(shot, 140,340, 100,100);
+    image(water, 140,420,100,100);
 
 fill(0);
 rect(160,20,140,50);
@@ -351,15 +402,31 @@ fill('red');
 rect(40,40,100, boxA);
 fill('green');
 rect(40, 40+ (boxA), 100, boxN);
+}
 
 //rect(20,20,50,margArrayta)
 
 //text(spM1[1], 100,100);
 
+//text(page,10,10);
+
+
+
+
+
+
 
 }
 
 function mousePressed (){
+
+  if (page < 11){
+  page++;} else 
+   {
+
+  // if (page < 11){
+  //   page++;
+  // } else if (page > 11) {
 
 // boxA = (20*margA);
 // boxN = (20*margN);
@@ -440,3 +507,5 @@ if (mouseX >140 && mouseX < 220 && mouseY > 440 && mouseY <510 ){
   // fill('green');
   // rect(40, 40+(20*margA), 100, (20*margN));
 }
+}
+// }
