@@ -230,6 +230,7 @@ noStroke();
 
 fill(0);
 rect(160,20,140,50);
+rect(160, 80, 20, 20);
 fill(255);
 male = ((boxA * (0.5 * (boxA / (boxA + boxN))) * 0.789) / maleW ) *100 ;
 female = ((boxA * (0.5 * (boxA / (boxA + boxN))) * 0.789) / femaleW ) *100;
@@ -421,7 +422,7 @@ rect(40, 40+ (boxA), 100, boxN);
 function mousePressed (){
 
   if (page < 11){
-  page++;} else 
+  page++;} else
    {
 
   // if (page < 11){
@@ -499,6 +500,9 @@ if (mouseX >140 && mouseX < 220 && mouseY > 440 && mouseY <510 ){
   //
   // boxA += (5*waterA);
   // boxN += (5*waterN);
+} else if (mouseX>160 && mouseY<180 && mouseY>80 && mouseY <100){
+  boxA=0;
+  boxN=0;
 };
 
 
